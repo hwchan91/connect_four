@@ -40,7 +40,7 @@ class Connect_four
       if !(1..7).to_a.map{|i| i.to_s}.include? col
         puts "Invalid response, please try again."
       elsif @board.col_full?(col.to_i - 1)
-        puts "Column #{col.to_1 - 1} is already full."
+        puts "Column #{col} is already full."
       else
         break
       end
@@ -49,7 +49,7 @@ class Connect_four
   end
 
   def play
-    puts "Game starts. #{@curr_player.name} goes first"
+    puts "Game starts. #{@curr_player.name} goes first."
     until end?
       @board.print
       puts "#{@curr_player.name}'s turn.'"
