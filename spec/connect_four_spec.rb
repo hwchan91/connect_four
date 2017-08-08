@@ -46,12 +46,12 @@ describe Connect_four do
   describe "#end?" do
     it "should return true if sb wins" do
       4.times {game.insert(game.player1, 0)}
-      expect(game.end?(game.player1.symbol)).to be true
+      expect(game.end?).to be true
     end
 
     it "should return true if game ties" do
       7.times {|i| 6.times {game.insert(game.player1, i)} }
-      expect(game.end?(game.player1.symbol)).to be true
+      expect(game.end?).to be true
     end
   end
 

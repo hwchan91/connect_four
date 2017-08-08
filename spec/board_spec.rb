@@ -102,7 +102,7 @@ describe Board do
       board.grid.each do |row|
         row.map!{"X"}
       end
-      expect(board.tie?("●")).to be true
+      expect(board.tie?).to be true
     end
   end
 

@@ -26,7 +26,7 @@ class Board
     6.times do |row|
       grid << []
       7.times do
-        grid[row] << "○"
+        grid[row] << "○ "
       end
     end
     grid
@@ -41,12 +41,12 @@ class Board
   end
 
   def col_full?(column)
-    @grid.none? {|row| row[column] == "○" }
+    @grid.none? {|row| row[column] == "○ " }
   end
 
   def insert(column, symbol)
     if !col_full?(column)
-      insert_row = @grid.find {|row| row[column] == "○"}
+      insert_row = @grid.find {|row| row[column] == "○ "}
       insert_row[column] = symbol
     end
   end
@@ -97,8 +97,8 @@ class Connect_four
 
   def initialize
     @board = Board.new
-    @player1 = Player.new("What is player 1's name?", "●".red)
-    @player2 = Player.new("What is player 2's name?", "●".brown)
+    @player1 = Player.new("What is player 1's name?", "● ".red)
+    @player2 = Player.new("What is player 2's name?", "● ".brown)
     @curr_player = rand_player
     play
   end
@@ -126,7 +126,7 @@ class Connect_four
       if !(1..7).to_a.map{|i| i.to_s}.include? col
         puts "Invalid response, please try again."
       elsif @board.col_full?(col.to_i - 1)
-        puts "Column #{col.to_1 - 1} is already full."
+        puts "Column #{col.to_i - 1} is already full."
       else
         break
       end

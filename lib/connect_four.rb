@@ -14,7 +14,7 @@ class Connect_four
     @player1 = Player.new("Player 1", "●".red)
     @player2 = Player.new("Player 2", "●".brown)
     @curr_player = rand_player
-    play
+#    play
   end
 
   def rand_player
@@ -33,6 +33,7 @@ class Connect_four
     @board.win?(@player1.symbol) or @board.win?(@player2.symbol) or @board.tie?
   end
 
+=begin
   def select_col
     while true
       puts "Select column to put #{@curr_player.symbol} coin (1-7)"
@@ -66,7 +67,7 @@ class Connect_four
     end
     puts "Another round?"
   end
-
+=end
 
 end
 a= Connect_four.new
